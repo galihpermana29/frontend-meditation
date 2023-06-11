@@ -1,0 +1,48 @@
+[
+	{
+		"inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+		"name": "medicalRecords",
+		"outputs": [
+			{ "internalType": "string", "name": "eventID", "type": "string" },
+			{ "internalType": "string", "name": "ipfsURL", "type": "string" },
+			{ "internalType": "address", "name": "writer", "type": "address" },
+			{ "internalType": "string", "name": "rsCode", "type": "string" }
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [{ "internalType": "string", "name": "evID", "type": "string" }],
+		"name": "searchByEventID",
+		"outputs": [
+			{ "internalType": "string", "name": "eventID", "type": "string" },
+			{ "internalType": "string", "name": "ipfsURL", "type": "string" },
+			{ "internalType": "address", "name": "writer", "type": "address" },
+			{ "internalType": "string", "name": "rsCode", "type": "string" }
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{ "internalType": "string", "name": "evID", "type": "string" },
+			{ "internalType": "string", "name": "ipURL", "type": "string" },
+			{ "internalType": "string", "name": "_rsCode", "type": "string" }
+		],
+		"name": "storeMedicalRecords",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{ "internalType": "string", "name": "evID", "type": "string" },
+			{ "internalType": "string", "name": "ipURL", "type": "string" },
+			{ "internalType": "string", "name": "_rsCode", "type": "string" }
+		],
+		"name": "updateMedicalRecords",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

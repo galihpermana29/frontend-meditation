@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		font-family: Inter, sans-serif;
+	}
+}
+
+@layer components {
+	.green-sage {
+		@apply text-[#0C513F];
+	}
+
+	.bg-green-sage {
+		@apply bg-[#0C513F];
+	}
+
+	.text-input {
+		@apply border-[0.5px] border-[#6D7280] h-[38px] md:h-[48px] text-[12px] md:text-[14px];
+	}
+
+	.text-label {
+		@apply text-[12px] md:text-[14px] font-[400] my-[10px];
+	}
+}
