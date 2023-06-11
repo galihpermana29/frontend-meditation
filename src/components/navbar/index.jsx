@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import navbarLogo from '../../assets/logo-nav.png';
 import { BellOutlined, CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
@@ -8,6 +8,7 @@ import pasienAPI from '../../api/pasien';
 const Navbar = () => {
 	const [navbarStatus, setNavbar] = useState(false);
 	const [notif, setNotif] = useState([]);
+	const navigate = useNavigate();
 
 	const rsData = JSON.parse(localStorage.getItem('rs_data'));
 	const locRoute = window.location.pathname.split('/')[1];
@@ -24,6 +25,7 @@ const Navbar = () => {
 			localStorage.removeItem('rs_token');
 			localStorage.removeItem('rs_data');
 		}
+		navigate('/');
 		window.location.reload();
 	};
 
@@ -76,7 +78,6 @@ const Navbar = () => {
 			const {
 				data: { status },
 			} = await pasienAPI.getAllNotif();
-			console.log(status, 'status');
 			setNotif(status);
 		};
 		if (locRoute === 'pasien') {

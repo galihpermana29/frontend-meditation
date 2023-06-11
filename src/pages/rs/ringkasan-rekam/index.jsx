@@ -75,7 +75,6 @@ const RingkasanRekamMedis = () => {
 	});
 
 	const retrieveIPFS = async () => {
-		console.log(isMedicalRecordExist, 'tt');
 		const data = await fetch(
 			`https://ipfs.io/ipfs/${isMedicalRecordExist?.[1]}`,
 			{
@@ -84,7 +83,6 @@ const RingkasanRekamMedis = () => {
 		);
 		if (data) {
 			const pp = await data.json();
-			console.log(pp, 'data');
 			setViewData(pp);
 			form.setFieldsValue(pp);
 		}

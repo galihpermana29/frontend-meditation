@@ -2,8 +2,6 @@ import { Divider } from 'antd';
 import footerLogo from '../../assets/logo-footer.png';
 
 const Footer = () => {
-	const path = window.location.pathname.split('/')[1];
-	console.log(path, 'path');
 	return (
 		<div className="bg-[#0C513F] text-white p-[30px] md:p-[60px] mt-[50px]">
 			<div className="flex flex-col md:flex-row gap-[20px] justify-between w-full min-h-[160px]">

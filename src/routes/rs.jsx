@@ -13,13 +13,14 @@ import NotauthenticatedGuardRoute from '../components/guard-route/notauthenticat
 import RsLogIn from '../pages/rs/login';
 
 const RsRoutes = () => {
+	const locationRoutes = window.location.pathname.split('/')[2];
 	return (
 		<>
-			<Navbar />
+			{!['login', 'signup'].includes(locationRoutes) && <Navbar />}
 			<Routes>
 				<Route
 					exact
-					path="/rs/login"
+					path="/login"
 					element={
 						<NotauthenticatedGuardRoute purpose="rs">
 							<RsLogIn />

@@ -8,7 +8,6 @@ const DataDiri = () => {
 	const [rsData, setRsData] = useState([]);
 	const [form] = Form.useForm();
 	const user = JSON.parse(localStorage.getItem('pasien_data'));
-	console.log(user);
 	const promptMessage = (msg) => {
 		message.info(msg);
 	};

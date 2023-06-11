@@ -16,6 +16,7 @@ const LogIn = () => {
 			localStorage.setItem('pasien_token', data);
 			promptMessage('Login berhasil');
 			navigate('/pasien');
+			window.location.reload();
 		} catch (error) {
 			console.log(error);
 			promptMessage(error.message);

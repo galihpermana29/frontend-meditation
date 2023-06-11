@@ -13,9 +13,10 @@ import LogIn from '../pages/pasien/login';
 import SignUp from '../pages/pasien/signup';
 
 const PasienRoutes = () => {
+	const locationRoutes = window.location.pathname.split('/')[2];
 	return (
 		<>
-			<Navbar />
+			{!['login', 'signup'].includes(locationRoutes) && <Navbar />}
 			<Routes>
 				<Route
 					exact

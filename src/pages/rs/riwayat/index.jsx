@@ -16,7 +16,6 @@ const DataPasien = () => {
 	useEffect(() => {
 		const getAllEvents = async () => {
 			let params = '';
-			console.log(idSearch, statusSearch, 'id');
 			if (idSearch && statusSearch) {
 				params = new URLSearchParams({ name: idSearch, status: statusSearch });
 			}
