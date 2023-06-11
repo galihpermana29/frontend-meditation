@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import PasienHome from '../pages/pasien/home';
 import Navbar from '../components/navbar';
 import RiwayatKunjungan from '../pages/riwayat';
@@ -8,12 +8,33 @@ import Tiket from '../pages/pasien/tiket';
 import DataDiri from '../pages/pasien/data-diri';
 import AuthenticatedGuardRoute from '../components/guard-route/authenticated';
 import Footer from '../components/footer';
+import NotauthenticatedGuardRoute from '../components/guard-route/notauthenticated';
+import LogIn from '../pages/pasien/login';
+import SignUp from '../pages/pasien/signup';
 
 const PasienRoutes = () => {
 	return (
 		<>
 			<Navbar />
 			<Routes>
+				<Route
+					exact
+					path="/login"
+					element={
+						<NotauthenticatedGuardRoute>
+							<LogIn />
+						</NotauthenticatedGuardRoute>
+					}
+				/>
+				<Route
+					exact
+					path="/signup"
+					element={
+						<NotauthenticatedGuardRoute>
+							<SignUp />
+						</NotauthenticatedGuardRoute>
+					}
+				/>
 				<Route
 					exact
 					path="/"

@@ -2,10 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import AuthContextProvider from './providers/AuthProviders';
 import PasienRoutes from './routes/pasien';
 import { useEffect } from 'react';
-import RsLogin from './pages/rs/login';
-import LogIn from './pages/pasien/login';
-import SignUp from './pages/pasien/signup';
-import NotauthenticatedGuardRoute from './components/guard-route/notauthenticated';
 import RsRoutes from './routes/rs';
 
 import {
@@ -42,33 +38,6 @@ function App() {
 		<BrowserRouter>
 			<WagmiConfig client={client}>
 				<Routes>
-					<Route
-						exact
-						path="/pasien/login"
-						element={
-							<NotauthenticatedGuardRoute>
-								<LogIn />
-							</NotauthenticatedGuardRoute>
-						}
-					/>
-					<Route
-						exact
-						path="/pasien/signup"
-						element={
-							<NotauthenticatedGuardRoute>
-								<SignUp />
-							</NotauthenticatedGuardRoute>
-						}
-					/>
-					<Route
-						exact
-						path="/rs/login"
-						element={
-							<NotauthenticatedGuardRoute purpose="rs">
-								<RsLogin />
-							</NotauthenticatedGuardRoute>
-						}
-					/>
 					<Route path="/pasien/*" element={<PasienRoutes />} />
 					<Route path="/rs/*" element={<RsRoutes />} />
 					<Route

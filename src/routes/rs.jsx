@@ -9,12 +9,23 @@ import DataPasien from '../pages/rs/riwayat';
 import DetailPasien from '../pages/rs/detail-pasien';
 import RingkasanRekamMedis from '../pages/rs/ringkasan-rekam';
 import Footer from '../components/footer';
+import NotauthenticatedGuardRoute from '../components/guard-route/notauthenticated';
+import RsLogIn from '../pages/rs/login';
 
 const RsRoutes = () => {
 	return (
 		<>
 			<Navbar />
 			<Routes>
+				<Route
+					exact
+					path="/rs/login"
+					element={
+						<NotauthenticatedGuardRoute purpose="rs">
+							<RsLogIn />
+						</NotauthenticatedGuardRoute>
+					}
+				/>
 				<Route
 					exact
 					path="/"
