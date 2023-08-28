@@ -102,9 +102,9 @@ const DataPasien = () => {
 					</div>
 				</div>
 			</div>
-			<div className="md:px-[80px] sm:px-[40px] mt-[40px]">
+			<div className="md:px-[80px] sm:px-[40px] mt-[40px] min-h-screen">
 				{eventsData.length > 0 ? (
-					<div className="grid items-center  justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-[10px]">
+					<div className="grid items-center  justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mt-[10px]">
 						{eventsData.map((dat) => (
 							<div>
 								<Card data={dat} purpose="rs" />

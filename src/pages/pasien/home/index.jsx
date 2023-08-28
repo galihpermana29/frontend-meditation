@@ -80,7 +80,7 @@ const PasienHome = () => {
 					Riwayat Kunjungan ke Rumah Sakit
 				</p>
 				{eventsData.length > 0 ? (
-					<div className="grid items-start justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 min-h-[70vh] mt-[30px]">
+					<div className="grid items-start justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 min-h-[70vh] mt-[30px]">
 						{eventsData.map((dat) => (
 							<div>
 								<Card data={dat} />
