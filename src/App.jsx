@@ -12,16 +12,18 @@ import {
 	mainnet,
 	sepolia,
 } from 'wagmi';
-import { bscTestnet, bsc } from 'wagmi/chains';
-import { publicProvider } from 'wagmi/providers/public';
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
 
+import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
+import { infuraProvider } from 'wagmi/providers/infura';
 function App() {
 	const loc = window.location.pathname;
 
 	const { chains, provider, webSocketProvider } = configureChains(
-		[mainnet, goerli, sepolia, bscTestnet, bsc],
-		[publicProvider()]
+		[goerli, sepolia],
+		[
+			infuraProvider({ apiKey: '0a9531093c714db48a24942f2302d3d2' }),
+			// publicProvider(),
+		]
 	);
 
 	const client = createClient({
